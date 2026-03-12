@@ -1,11 +1,333 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+<Layout title="Home">
 
-<Layout>
-	<Welcome />
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-line"></div>
+      <div class="hero-badge">Colorado Springs, CO · Veteran Owned</div>
+      <h1 class="hero-title">
+        AUTO REPAIR<br>YOU CAN <span class="green">TRUST.</span>
+      </h1>
+      <p class="hero-tagline">Where Integrity Drives</p>
+      <p class="hero-desc">
+        Honest diagnostics, no upsells, and clear communication — every time.
+        We treat your vehicle the way we'd treat our own.
+      </p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn-primary">Book Appointment</a>
+        <a href="tel:7208126036" class="btn-outline">
+          Call 720-812-6036 →
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- HERO IMAGE — Replace with shop exterior or team photo -->
+      <div class="img-placeholder hero-img">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <div>HERO IMAGE</div>
+        <div class="hint">Shop exterior or team · 900×600px recommended</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <div class="trust-bar">
+    <div class="trust-item">✓ No Upsells — Ever</div>
+    <span class="dot"></span>
+    <div class="trust-item">✓ Honest Flat-Rate Estimates</div>
+    <span class="dot"></span>
+    <div class="trust-item">✓ Same-Day Service Available</div>
+    <span class="dot"></span>
+    <div class="trust-item">✓ Customer-Supplied Parts OK</div>
+  </div>
+
+  <!-- ── HOMEPAGE QUICK LINKS ── -->
+  <section class="quick-section">
+    <div class="quick-grid">
+
+      <div class="quick-card dark">
+        <div class="section-label light">Our Work</div>
+        <h2 class="section-title light">FULL-SERVICE<br>REPAIR &amp; MAINTENANCE</h2>
+        <p>From oil changes to engine overhauls — all 12 services under one roof.</p>
+        <a href="/services" class="btn-primary" style="margin-top:28px;">See All Services</a>
+      </div>
+
+      <div class="quick-card light">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">VETERAN OWNED.<br>COMMUNITY DRIVEN.</h2>
+        <p style="color:var(--gray);">Founded on honesty and precision. We explain what your car needs — and what it doesn't.</p>
+        <a href="/about" class="btn-primary" style="margin-top:28px;">About Us</a>
+      </div>
+
+      <div class="quick-card dark">
+        <div class="section-label light">Ready to Go?</div>
+        <h2 class="section-title light">BOOK AN<br>APPOINTMENT</h2>
+        <p style="color:rgba(245,242,236,0.55);margin-top:16px;">Call, stop by, or fill out our form. We'll get you in fast.</p>
+        <a href="/contact" class="btn-primary" style="margin-top:28px;">Get In Touch</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── REVIEWS PREVIEW ── -->
+  <section class="reviews-preview">
+    <div class="reviews-header">
+      <div>
+        <div class="section-label centered">What Customers Say</div>
+        <h2 class="section-title" style="text-align:center;">REAL PEOPLE.<br>REAL RESULTS.</h2>
+      </div>
+    </div>
+    <div class="reviews-row">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Very honest and fair prices. Cowboy always makes time to help — always in a very fair and honest manner."</p>
+        <div class="reviewer">Anahi Rodriguez · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"As a woman it's difficult finding an honest mechanic. I really appreciate their fairness in price. Phenomenal service."</p>
+        <div class="reviewer">Anne Lee Romero · Google</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Great service! Got an oil change and an alignment — good price and good people."</p>
+        <div class="reviewer">Robens Auzirus · Google</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="/reviews" class="btn-primary">Read All Reviews</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    min-height: calc(100vh - 108px);
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-right { display: none; }
+    .hero-left {
+      padding: 56px 24px 64px;
+    }
+    .hero-title { font-size: clamp(52px, 14vw, 72px); }
+    .hero-badge { font-size: 10px; }
+    .hero-desc { font-size: 15px; }
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-line {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, var(--green), transparent);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(30,125,52,0.15);
+    border: 1px solid rgba(30,125,52,0.4);
+    color: var(--green-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    width: fit-content;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--green-light);
+    border-radius: 50%;
+  }
+
+  .hero-title {
+    font-size: clamp(64px, 7vw, 96px);
+    font-weight: 800;
+    line-height: 0.92;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .hero-title .green { color: var(--green-light); }
+
+  .hero-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.4);
+    margin-bottom: 36px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(245,242,236,0.65);
+    max-width: 400px;
+    margin-bottom: 44px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border-radius: 4px;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--green);
+    padding: 18px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .dot {
+    width: 5px; height: 5px;
+    background: rgba(255,255,255,0.35);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* QUICK SECTION */
+  .quick-section { padding: 0; }
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    .quick-grid { grid-template-columns: 1fr; }
+    .quick-card { padding: 48px 24px; }
+    .trust-bar { padding: 16px 24px; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .dot { display: none; }
+  }
+
+  .quick-card {
+    padding: 64px 52px;
+  }
+  .quick-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  .quick-card.dark { background: var(--black); }
+  .quick-card.dark p { color: rgba(245,242,236,0.55); }
+  .quick-card.light { background: var(--white); border-top: 3px solid var(--border); }
+  .quick-card.green { background: var(--green); }
+
+  .btn-white {
+    background: white;
+    color: var(--green);
+    padding: 14px 32px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+  .btn-white:hover { opacity: 0.9; }
+
+  /* REVIEWS PREVIEW */
+  .reviews-preview {
+    background: var(--green-pale);
+    padding: 80px;
+  }
+  .reviews-header { margin-bottom: 48px; }
+
+  .reviews-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-preview { padding: 56px 24px; }
+    .reviews-row { grid-template-columns: 1fr; }
+  }
+
+  .review-card {
+    background: white;
+    padding: 32px;
+    border-radius: 4px;
+    border-left: 3px solid var(--green);
+  }
+  .stars {
+    color: var(--green);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  .review-card p {
+    font-size: 14px;
+    color: var(--black);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .reviewer {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray);
+  }
+</style>
