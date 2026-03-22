@@ -33,7 +33,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div>
             <div class="detail-label">Email</div>
-            <!-- UPDATE: Replace with real TrueFix email when ready -->
             <a href="mailto:info@truefixauto.com" class="detail-value">info@truefixauto.com</a>
           </div>
         </li>
@@ -43,8 +42,7 @@ import Layout from '../layouts/Layout.astro';
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
-            <div class="detail-label">Address</div>
-            <!-- UPDATE: Confirm address if location changes during rebrand -->
+            <div class="detail-label">Address — Colorado Springs</div>
             <a href="https://maps.google.com/?q=3826+E+Pikes+Peak+Ave+Colorado+Springs+CO" target="_blank" class="detail-value">
               3826 E Pikes Peak Ave<br>Colorado Springs, CO 80909
             </a>
@@ -65,12 +63,21 @@ import Layout from '../layouts/Layout.astro';
         </li>
       </ul>
 
-      <!-- DISCOUNT NOTE -->
+      <!-- MILITARY DISCOUNT NOTE -->
       <div class="discount-note">
         <div class="discount-icon">🎖️</div>
         <div>
           <div class="discount-title">Military &amp; First Responder Discount</div>
           <div class="discount-body">Active duty, veterans, and first responders receive a discount on all services. Just mention it when you call or come in.</div>
+        </div>
+      </div>
+
+      <!-- WARRANTY NOTE -->
+      <div class="warranty-note">
+        <div class="warranty-icon">🛡️</div>
+        <div>
+          <div class="warranty-title">12-Month / 12,000-Mile Warranty</div>
+          <div class="warranty-body">All parts and labor supplied by TrueFix Auto are covered. We stand behind every job.</div>
         </div>
       </div>
 
@@ -132,6 +139,7 @@ import Layout from '../layouts/Layout.astro';
             <option>Oil Change</option>
             <option>Brake Service</option>
             <option>Engine Diagnostics</option>
+            <option>Engine Swap</option>
             <option>Suspension / Steering / Alignment</option>
             <option>Cooling System Repair</option>
             <option>AC Service or Repair</option>
@@ -141,7 +149,6 @@ import Layout from '../layouts/Layout.astro';
             <option>Starter / Alternator</option>
             <option>Pre-Purchase Inspection</option>
             <option>Fleet Service</option>
-            <option>Wrapping or Detailing</option>
             <option>Not Sure — Need Diagnosis</option>
             <option>Other</option>
           </select>
@@ -159,7 +166,7 @@ import Layout from '../layouts/Layout.astro';
           </label>
         </div>
 
-        <button type="submit" class="submit-btn">Request Appointment →</button>
+        <button type="submit" class="submit-btn">Request Quote →</button>
         <p class="form-note">We'll call you within a few hours to confirm your appointment time.</p>
       </form>
     </div>
@@ -176,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      title="Cowboys Mechanic Shop — 3826 E Pikes Peak Ave, Colorado Springs, CO 80909">
+      title="TrueFix Auto — 3826 E Pikes Peak Ave, Colorado Springs, CO 80909">
     </iframe>
   </div>
 
@@ -195,7 +202,6 @@ import Layout from '../layouts/Layout.astro';
     max-width: 560px;
   }
 
-  /* CONTACT SPLIT */
   .contact-section {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
@@ -203,13 +209,12 @@ import Layout from '../layouts/Layout.astro';
     min-height: 80vh;
   }
 
-  /* LEFT */
   .contact-info {
     padding: 60px 56px;
     border-right: 1px solid rgba(255,255,255,0.07);
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
   }
 
   .contact-details { list-style: none; }
@@ -253,7 +258,7 @@ import Layout from '../layouts/Layout.astro';
   .detail-value:hover { color: var(--green-light); }
 
   /* DISCOUNT NOTE */
-  .discount-note {
+  .discount-note, .warranty-note {
     display: flex;
     gap: 16px;
     background: rgba(30,125,52,0.1);
@@ -261,8 +266,8 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 4px;
     padding: 20px;
   }
-  .discount-icon { font-size: 24px; flex-shrink: 0; }
-  .discount-title {
+  .discount-icon, .warranty-icon { font-size: 24px; flex-shrink: 0; }
+  .discount-title, .warranty-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -271,14 +276,13 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.04em;
     margin-bottom: 6px;
   }
-  .discount-body {
+  .discount-body, .warranty-body {
     font-size: 13px;
     color: rgba(245,242,236,0.5);
     line-height: 1.6;
   }
 
   /* SOCIAL */
-  .social-row {}
   .social-label {
     font-size: 11px;
     font-weight: 600;
@@ -304,12 +308,10 @@ import Layout from '../layouts/Layout.astro';
   }
   .social-btn:hover { background: var(--green); color: white; border-color: var(--green); }
 
-  /* RIGHT — FORM */
+  /* FORM */
   .contact-form { padding: 60px 56px; }
 
-  .form-heading {
-    margin-bottom: 36px;
-  }
+  .form-heading { margin-bottom: 36px; }
   .form-heading h2 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 36px;
@@ -397,13 +399,8 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 12px;
   }
 
-  /* MAP */
   .map-section { height: 400px; }
   .map-section iframe { display: block; }
-
-  @media (max-width: 768px) {
-    .map-section { height: 280px; }
-  }
 
   @media (max-width: 768px) {
     .page-header { padding: 48px 24px 40px; }
