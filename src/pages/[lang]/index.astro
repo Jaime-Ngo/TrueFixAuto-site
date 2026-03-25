@@ -12,7 +12,6 @@ const currentPath = Astro.url.pathname;
 ---
 <Layout t={t} currentPath={currentPath}>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
       <div class="hero-line"></div>
@@ -58,7 +57,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </section>
 
-  <!-- TRUST BAR -->
   <div class="trust-bar">
     {t.home.trust.map((item, i) => (
       <>
@@ -68,7 +66,6 @@ const currentPath = Astro.url.pathname;
     ))}
   </div>
 
-  <!-- QUICK LINKS -->
   <section class="quick-section">
     <div class="quick-grid">
       <div class="quick-card dark">
@@ -92,7 +89,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </section>
 
-  <!-- REVIEWS PREVIEW -->
   <section class="reviews-preview">
     <div class="reviews-header">
       <div class="section-label centered">{t.home.reviews.label}</div>

@@ -193,7 +193,7 @@ export const en = {
       },
       cta: {
         title: "NOT SURE WHAT YOUR CAR NEEDS?",
-        desc: "Call us or bring it in to our Colorado Springs shop. We'll diagnose it honestly and tell you exactly what's going on.",
+        desc: "Call us, text, or bring it in to our Colorado Springs shop. We'll diagnose it honestly and tell you exactly what's going on.",
         book: "Book an Appointment",
         phone: "720-812-6036",
       },
@@ -252,7 +252,7 @@ export const en = {
         label: "Get In Touch",
         title1: "READY TO GET",
         title2: "YOUR CAR FIXED?",
-        sub: "Call us, stop by, or fill out the form. We'll get you in fast and keep you updated every step of the way.",
+        sub: "Call us, text, stop by, or fill out the form. We'll get you in fast and keep you updated every step of the way.",
       },
       details: {
         phone: { label: "Phone", value: "720-812-6036" },

@@ -12,7 +12,6 @@ const currentPath = Astro.url.pathname;
 ---
 <Layout t={t} currentPath={currentPath}>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-header-inner">
       <div class="section-label light">{t.reviews.header.label}</div>
@@ -26,7 +25,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- REVIEWS GRID -->
   <section class="reviews-section">
     <div class="reviews-grid">
       {t.reviews.items.map(review => (

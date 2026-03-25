@@ -12,17 +12,14 @@ const currentPath = Astro.url.pathname;
 ---
 <Layout t={t} currentPath={currentPath}>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="section-label light">{t.contact.header.label}</div>
     <h1 class="section-title light">{t.contact.header.title1}<br>{t.contact.header.title2}</h1>
     <p>{t.contact.header.sub}</p>
   </div>
 
-  <!-- CONTACT SPLIT -->
   <section class="contact-section">
 
-    <!-- LEFT: INFO -->
     <div class="contact-info">
       <ul class="contact-details">
         <li class="contact-detail">
@@ -96,7 +93,6 @@ const currentPath = Astro.url.pathname;
       </div>
     </div>
 
-    <!-- RIGHT: FORM -->
     <div class="contact-form">
       <div class="form-heading">
         <h2>{t.contact.form.heading}</h2>
@@ -150,7 +146,6 @@ const currentPath = Astro.url.pathname;
 
   </section>
 
-  <!-- MAP -->
   <div class="map-section">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.5!2d-104.7717!3d38.8339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713458f2c172309%3A0xfe2d7d2f42e5bbfe!2sCowboys%20Mechanic%20Shop!5e0!3m2!1sen!2sus!4v1"

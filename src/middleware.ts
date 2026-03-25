@@ -1,8 +1,4 @@
-// src/middleware.ts  (only needed if you enable SSR / hybrid mode)
-// This detects the browser's preferred language and redirects accordingly.
-// It is OPTIONAL — the simple redirect in index.astro works fine for static builds.
-//
-// To use: set `output: 'hybrid'` in astro.config.mjs and uncomment this file.
+
 
 import { defineMiddleware } from 'astro:middleware';
 

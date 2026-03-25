@@ -12,7 +12,6 @@ const currentPath = Astro.url.pathname;
 ---
 <Layout t={t} currentPath={currentPath}>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-header-inner">
       <div class="section-label light">{t.services.header.label}</div>
@@ -21,7 +20,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- WARRANTY BANNER -->
   <div class="warranty-banner">
     <div class="warranty-icon">🛡️</div>
     <div class="warranty-content">
@@ -30,7 +28,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- MILITARY DISCOUNT BANNER -->
   <div class="military-banner">
     <div class="military-icon">🎖️</div>
     <div class="military-content">
@@ -40,10 +37,8 @@ const currentPath = Astro.url.pathname;
     <a href={`/${lang}/contact`} class="btn-primary military-cta">{t.services.military.cta}</a>
   </div>
 
-  <!-- SERVICES BODY -->
   <section class="services-section">
 
-    <!-- REPAIR -->
     <div class="category-block">
       <div class="category-heading">
         <span class="category-tag">{t.services.repair.tag}</span>
@@ -59,7 +54,6 @@ const currentPath = Astro.url.pathname;
       </div>
     </div>
 
-    <!-- MAINTENANCE -->
     <div class="category-block">
       <div class="category-heading">
         <span class="category-tag">{t.services.maintenance.tag}</span>
@@ -75,7 +69,6 @@ const currentPath = Astro.url.pathname;
       </div>
     </div>
 
-    <!-- COMING SOON -->
     <div class="category-block">
       <div class="category-heading">
         <span class="category-tag">{t.services.comingSoon.tag}</span>
@@ -93,7 +86,6 @@ const currentPath = Astro.url.pathname;
 
   </section>
 
-  <!-- CTA BANNER -->
   <div class="cta-banner">
     <div class="cta-inner">
       <h2>{t.services.cta.title}</h2>
