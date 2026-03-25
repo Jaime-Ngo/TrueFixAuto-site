@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'es' } }];
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as 'en' | 'es');
+const currentPath = Astro.url.pathname;
+---
+<Layout t={t} currentPath={currentPath}>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="section-label light">{t.services.header.label}</div>
+      <h1 class="section-title light">{t.services.header.title}</h1>
+      <p>{t.services.header.desc}</p>
+    </div>
+  </div>
+
+  <!-- WARRANTY BANNER -->
+  <div class="warranty-banner">
+    <div class="warranty-icon">🛡️</div>
+    <div class="warranty-content">
+      <div class="warranty-title">{t.services.warranty.title}</div>
+      <div class="warranty-sub">{t.services.warranty.sub}</div>
+    </div>
+  </div>
+
+  <!-- MILITARY DISCOUNT BANNER -->
+  <div class="military-banner">
+    <div class="military-icon">🎖️</div>
+    <div class="military-content">
+      <div class="military-title">{t.services.military.title}</div>
+      <div class="military-sub">{t.services.military.sub}</div>
+    </div>
+    <a href={`/${lang}/contact`} class="btn-primary military-cta">{t.services.military.cta}</a>
+  </div>
+
+  <!-- SERVICES BODY -->
+  <section class="services-section">
+
+    <!-- REPAIR -->
+    <div class="category-block">
+      <div class="category-heading">
+        <span class="category-tag">{t.services.repair.tag}</span>
+      </div>
+      <div class="services-grid">
+        {t.services.repair.items.map(item => (
+          <div class="service-card">
+            <div class="service-name">{item.name}</div>
+            <p class="service-desc">{item.desc}</p>
+            <a href={`/${lang}/contact`} class="service-link">{t.services.quoteLink}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- MAINTENANCE -->
+    <div class="category-block">
+      <div class="category-heading">
+        <span class="category-tag">{t.services.maintenance.tag}</span>
+      </div>
+      <div class="services-grid">
+        {t.services.maintenance.items.map(item => (
+          <div class="service-card">
+            <div class="service-name">{item.name}</div>
+            <p class="service-desc">{item.desc}</p>
+            <a href={`/${lang}/contact`} class="service-link">{t.services.quoteLink}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- COMING SOON -->
+    <div class="category-block">
+      <div class="category-heading">
+        <span class="category-tag">{t.services.comingSoon.tag}</span>
+      </div>
+      <div class="services-grid coming-soon-grid">
+        {t.services.comingSoon.items.map(item => (
+          <div class="service-card coming-soon-card">
+            <div class="service-name">{item.name}</div>
+            <p class="service-desc">{item.desc}</p>
+            <a href={`/${lang}/contact`} class="service-link">{t.services.notifyLink}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div class="cta-inner">
+      <h2>{t.services.cta.title}</h2>
+      <p>{t.services.cta.desc}</p>
+      <div class="cta-actions">
+        <a href={`/${lang}/contact`} class="btn-primary">{t.services.cta.book}</a>
+        <a href="tel:7208126036" class="cta-phone">{t.services.cta.phone}</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<style>
+  .page-header { background: var(--black); border-bottom: 2px solid var(--green); padding: 72px 80px 60px; }
+  .page-header-inner { max-width: 680px; }
+  .page-header p { font-size: 16px; color: rgba(245,242,236,0.55); line-height: 1.7; margin-top: 16px; }
+
+  .warranty-banner { background: var(--green); display: flex; align-items: center; gap: 20px; padding: 24px 80px; }
+  .warranty-icon { font-size: 28px; flex-shrink: 0; }
+  .warranty-title { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: white; letter-spacing: 0.04em; text-transform: uppercase; }
+  .warranty-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+
+  .military-banner { background: rgba(30,125,52,0.08); border-bottom: 1px solid rgba(30,125,52,0.2); display: flex; align-items: center; gap: 20px; padding: 20px 80px; }
+  .military-icon { font-size: 24px; flex-shrink: 0; }
+  .military-title { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; color: var(--green); letter-spacing: 0.04em; text-transform: uppercase; }
+  .military-sub { font-size: 13px; color: var(--gray); margin-top: 2px; }
+  .military-content { flex: 1; }
+  .military-cta { flex-shrink: 0; }
+
+  .services-section { padding: 72px 80px; display: flex; flex-direction: column; gap: 64px; }
+  .category-heading { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+  .category-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--black);
+    position: relative; padding-left: 18px;
+  }
+  .category-tag::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+  }
+
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--border); }
+  .service-card { background: var(--white); padding: 32px 28px; display: flex; flex-direction: column; transition: background 0.2s; }
+  .service-card:hover { background: var(--green-pale); }
+  .service-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 10px; line-height: 1.15; }
+  .service-desc { font-size: 13.5px; color: var(--gray); line-height: 1.65; flex: 1; }
+  .service-link { display: inline-block; margin-top: 18px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); text-decoration: none; transition: color 0.2s; }
+  .service-link:hover { color: var(--green-light); }
+
+  .coming-soon-grid { grid-template-columns: repeat(2, 1fr); background: none; gap: 0; }
+  .coming-soon-card { background: var(--black); border: 2px dashed rgba(30,125,52,0.4); border-radius: 4px; }
+  .coming-soon-card:hover { background: #1a2a1a; }
+  .coming-soon-card .service-name { color: var(--white); }
+  .coming-soon-card .service-desc { color: rgba(245,242,236,0.45); }
+  .coming-soon-card .service-link { color: var(--green-light); }
+
+  .cta-banner { background: var(--black); padding: 72px 80px; border-top: 2px solid var(--green); }
+  .cta-inner { max-width: 640px; }
+  .cta-inner h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: var(--white); margin-bottom: 14px; line-height: 1; }
+  .cta-inner p { font-size: 15px; color: rgba(245,242,236,0.55); line-height: 1.7; margin-bottom: 32px; }
+  .cta-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .cta-phone { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--green-light); text-decoration: none; letter-spacing: 0.04em; }
+  .cta-phone:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .page-header { padding: 48px 24px 40px; }
+    .warranty-banner { padding: 20px 24px; flex-wrap: wrap; }
+    .military-banner { padding: 20px 24px; flex-wrap: wrap; }
+    .military-cta { width: 100%; text-align: center; }
+    .services-section { padding: 40px 24px; gap: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .coming-soon-grid { grid-template-columns: 1fr; }
+    .cta-banner { padding: 48px 24px; }
+    .cta-inner h2 { font-size: 34px; }
+    .cta-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+</style>

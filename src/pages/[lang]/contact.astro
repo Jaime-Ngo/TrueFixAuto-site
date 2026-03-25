@@ -1,0 +1,223 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'es' } }];
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang as 'en' | 'es');
+const currentPath = Astro.url.pathname;
+---
+<Layout t={t} currentPath={currentPath}>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="section-label light">{t.contact.header.label}</div>
+    <h1 class="section-title light">{t.contact.header.title1}<br>{t.contact.header.title2}</h1>
+    <p>{t.contact.header.sub}</p>
+  </div>
+
+  <!-- CONTACT SPLIT -->
+  <section class="contact-section">
+
+    <!-- LEFT: INFO -->
+    <div class="contact-info">
+      <ul class="contact-details">
+        <li class="contact-detail">
+          <div class="detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-2.85-8.62A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="detail-label">{t.contact.details.phone.label}</div>
+            <a href="tel:7208126036" class="detail-value">{t.contact.details.phone.value}</a>
+          </div>
+        </li>
+        <li class="contact-detail">
+          <div class="detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="detail-label">{t.contact.details.email.label}</div>
+            <a href="mailto:info@truefixauto.com" class="detail-value">{t.contact.details.email.value}</a>
+          </div>
+        </li>
+        <li class="contact-detail">
+          <div class="detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="detail-label">{t.contact.details.address.label}</div>
+            <a href="https://maps.google.com/?q=3826+E+Pikes+Peak+Ave+Colorado+Springs+CO" target="_blank" class="detail-value">
+              3826 E Pikes Peak Ave<br>Colorado Springs, CO 80909
+            </a>
+          </div>
+        </li>
+        <li class="contact-detail">
+          <div class="detail-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="detail-label">{t.contact.details.hours.label}</div>
+            <div class="detail-value" style="white-space:pre-line;">{t.contact.details.hours.value}</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="discount-note">
+        <div class="discount-icon">🎖️</div>
+        <div>
+          <div class="discount-title">{t.contact.discount.title}</div>
+          <div class="discount-body">{t.contact.discount.body}</div>
+        </div>
+      </div>
+
+      <div class="warranty-note">
+        <div class="warranty-icon">🛡️</div>
+        <div>
+          <div class="warranty-title">{t.contact.warranty.title}</div>
+          <div class="warranty-body">{t.contact.warranty.body}</div>
+        </div>
+      </div>
+
+      <div class="social-row">
+        <div class="social-label">{t.contact.social.label}</div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/cowboysmechanicshop/" target="_blank" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/p/Cowboys-Mechanic-Shop-61580205101878/" target="_blank" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form">
+      <div class="form-heading">
+        <h2>{t.contact.form.heading}</h2>
+        <p>{t.contact.form.sub}</p>
+      </div>
+
+      <form>
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="first-name">{t.contact.form.firstName}</label>
+            <input type="text" id="first-name" name="first_name" placeholder={t.contact.form.firstNamePlaceholder} required />
+          </div>
+          <div class="form-row">
+            <label for="last-name">{t.contact.form.lastName}</label>
+            <input type="text" id="last-name" name="last_name" placeholder={t.contact.form.lastNamePlaceholder} required />
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="phone">{t.contact.form.phone}</label>
+          <input type="tel" id="phone" name="phone" placeholder={t.contact.form.phonePlaceholder} required />
+        </div>
+        <div class="form-row">
+          <label for="email">{t.contact.form.email}</label>
+          <input type="email" id="email" name="email" placeholder={t.contact.form.emailPlaceholder} />
+        </div>
+        <div class="form-row">
+          <label for="vehicle">{t.contact.form.vehicle}</label>
+          <input type="text" id="vehicle" name="vehicle" placeholder={t.contact.form.vehiclePlaceholder} required />
+        </div>
+        <div class="form-row">
+          <label for="service">{t.contact.form.service}</label>
+          <select id="service" name="service">
+            <option value="">{t.contact.form.servicePlaceholder}</option>
+            {t.contact.form.services.map(s => <option>{s}</option>)}
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">{t.contact.form.message}</label>
+          <textarea id="message" name="message" placeholder={t.contact.form.messagePlaceholder}></textarea>
+        </div>
+        <div class="form-row">
+          <label class="checkbox-label">
+            <input type="checkbox" name="military" />
+            <span>{t.contact.form.military}</span>
+          </label>
+        </div>
+        <button type="submit" class="submit-btn">{t.contact.form.submit}</button>
+        <p class="form-note">{t.contact.form.note}</p>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.5!2d-104.7717!3d38.8339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8713458f2c172309%3A0xfe2d7d2f42e5bbfe!2sCowboys%20Mechanic%20Shop!5e0!3m2!1sen!2sus!4v1"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="TrueFix Auto — 3826 E Pikes Peak Ave, Colorado Springs, CO 80909">
+    </iframe>
+  </div>
+
+</Layout>
+
+<style>
+  .page-header { background: var(--black); padding: 72px 80px 60px; border-bottom: 2px solid var(--green); }
+  .page-header p { font-size: 16px; color: rgba(245,242,236,0.5); margin-top: 16px; max-width: 560px; }
+
+  .contact-section { display: grid; grid-template-columns: 1fr 1.4fr; background: var(--black); min-height: 80vh; }
+
+  .contact-info { padding: 60px 56px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; gap: 32px; }
+  .contact-details { list-style: none; }
+  .contact-detail { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .contact-detail:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+  .detail-icon { width: 40px; height: 40px; background: rgba(30,125,52,0.15); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--green-light); }
+  .detail-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,242,236,0.3); margin-bottom: 4px; }
+  .detail-value { color: var(--white); font-size: 15px; font-weight: 500; text-decoration: none; line-height: 1.5; display: block; }
+  .detail-value:hover { color: var(--green-light); }
+
+  .discount-note, .warranty-note { display: flex; gap: 16px; background: rgba(30,125,52,0.1); border: 1px solid rgba(30,125,52,0.25); border-radius: 4px; padding: 20px; }
+  .discount-icon, .warranty-icon { font-size: 24px; flex-shrink: 0; }
+  .discount-title, .warranty-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; color: var(--green-light); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .discount-body, .warranty-body { font-size: 13px; color: rgba(245,242,236,0.5); line-height: 1.6; }
+
+  .social-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,242,236,0.3); margin-bottom: 12px; }
+  .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .social-btn { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(245,242,236,0.6); padding: 9px 16px; border-radius: 3px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .social-btn:hover { background: var(--green); color: white; border-color: var(--green); }
+
+  .contact-form { padding: 60px 56px; }
+  .form-heading { margin-bottom: 36px; }
+  .form-heading h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+  .form-heading p { font-size: 14px; color: rgba(245,242,236,0.45); }
+  .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-row { margin-bottom: 18px; }
+  .form-row label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.45); margin-bottom: 8px; }
+  .form-row input, .form-row select, .form-row textarea { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--white); padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; border-radius: 3px; outline: none; transition: border-color 0.2s; }
+  .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(245,242,236,0.2); }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--green); }
+  .form-row select option { background: var(--dark); color: var(--white); }
+  .form-row textarea { height: 110px; resize: vertical; }
+  .checkbox-label { display: flex !important; align-items: center; gap: 10px; cursor: pointer; font-size: 13px !important; color: rgba(245,242,236,0.55) !important; letter-spacing: 0 !important; text-transform: none !important; }
+  .checkbox-label input { width: auto; }
+  .submit-btn { width: 100%; background: var(--green); color: white; border: none; padding: 16px 32px; font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 3px; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+  .submit-btn:hover { background: var(--green-light); }
+  .form-note { font-size: 12px; color: rgba(245,242,236,0.25); text-align: center; margin-top: 12px; }
+
+  .map-section { height: 400px; }
+  .map-section iframe { display: block; }
+
+  @media (max-width: 768px) {
+    .page-header { padding: 48px 24px 40px; }
+    .contact-section { grid-template-columns: 1fr; }
+    .contact-info { padding: 40px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .contact-form { padding: 40px 24px; }
+    .form-grid-2 { grid-template-columns: 1fr; }
+    .map-section { height: 220px; }
+  }
+</style>
