@@ -99,9 +99,9 @@ export const en = {
         label: "Who We Are",
         title1: "MORE THAN JUST",
         title2: "A MECHANIC SHOP.",
-        p1: "TrueFix Auto was built on a simple principle: treat every customer the way you'd want to be treated. As a veteran-owned shop right here in Colorado Springs, we bring military-grade discipline and precision to every repair, whether it's a quick oil change or a full engine swap.",
-        p2: "We never upsell. We never talk over your head. We tell you exactly what your vehicle needs, what it doesn't, and what it'll cost before we touch anything. That's the TrueFix standard.",
-        p3: "Colorado Springs is our community. Whether you're a local, a first-time customer, or just passing through — you'll get the same honest, quality service every single time.",
+        p1: "TrueFix Auto operates on a clear standard: do the work right, communicate clearly, and respect the customer’s time and money. As a family owned business serving Colorado Springs, we take care of our community with consistent service, honest recommendations, and work done right the first time. Wherever you see the TrueFix name, you can expect precision, transparency, and reliability.",
+        p2: "",
+        p3: "",
         cta: "Get Estimate",
       },
       stats: {

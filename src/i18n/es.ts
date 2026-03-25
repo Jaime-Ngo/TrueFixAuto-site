@@ -42,7 +42,7 @@ export const es: Translations = {
     hero: {
       badge: "Colorado Springs, CO · De Veterano",
       headline1: "REPARACIÓN",
-      headline2: "DE AUTOS EN LA QUE",
+      headline2: "DE AUTOS EN LA QUE PUEDE",
       headline3: "CONFIAR.",
       tagline: "Donde la Integridad Maneja — Colorado Springs",
       desc: "Diagnósticos honestos, sin ventas adicionales y comunicación clara en todo momento. Tratamos su vehículo como si fuera el nuestro.",
@@ -61,7 +61,7 @@ export const es: Translations = {
         label: "Nuestro Trabajo",
         title1: "SERVICIO COMPLETO",
         title2: "REPARACIÓN Y MANTENIMIENTO",
-        desc: "Desde cambios de aceite hasta reemplazos de motor, todos los servicios bajo un mismo techo en Colorado Springs.",
+        desc: "Desde cambios de aceite hasta reemplazos de motor todos los servicios bajo un mismo techo en Colorado Springs.",
         cta: "Ver Todos los Servicios",
       },
       about: {
