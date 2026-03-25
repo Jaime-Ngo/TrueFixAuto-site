@@ -24,7 +24,6 @@ const altPath = t.switchPath(currentPath);
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href={`/${t.lang}/`} class="nav-logo">
       <div class="logo-wordmark">
@@ -55,7 +54,6 @@ const altPath = t.switchPath(currentPath);
       <li><a href={`/${t.lang}/about`}>{t.nav.about}</a></li>
       <li><a href={`/${t.lang}/reviews`}>{t.nav.reviews}</a></li>
       <li><a href={`/${t.lang}/contact`}>{t.nav.contact}</a></li>
-      <!-- Language toggle -->
       <li>
         <a href={altPath} class="lang-toggle" aria-label={`Switch to ${t.switchLangFull}`}>
           <span class="lang-active">{t.langLabel}</span>
@@ -76,7 +74,6 @@ const altPath = t.switchPath(currentPath);
     </div>
   </nav>
 
-  <!-- MOBILE DRAWER -->
   <div class="mobile-menu" id="mobile-menu">
     <a href={`/${t.lang}/`}>{t.nav.home}</a>
     <a href={`/${t.lang}/services`}>{t.nav.services}</a>
@@ -91,7 +88,6 @@ const altPath = t.switchPath(currentPath);
     <slot />
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-top">
 
@@ -163,7 +159,6 @@ const altPath = t.switchPath(currentPath);
     </div>
   </footer>
 
-  <!-- FLOATING CALL BUTTON (mobile) -->
   <div class="fab-container" id="fab-container">
     <div class="fab-label">{t.fab.label}</div>
     <div class="fab-menu" id="fab-menu">

@@ -12,13 +12,11 @@ const currentPath = Astro.url.pathname;
 ---
 <Layout t={t} currentPath={currentPath}>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="section-label light">{t.about.header.label}</div>
     <h1 class="section-title light">{t.about.header.title1}<br>{t.about.header.title2}</h1>
   </div>
 
-  <!-- MAIN ABOUT SPLIT -->
   <section class="about-main">
     <div class="about-img-col">
       <div class="img-placeholder about-img">
@@ -39,7 +37,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </section>
 
-  <!-- STATS ROW -->
   <div class="stats-row">
     <div class="stat">
       <div class="stat-num">{t.about.stats.rating.num}</div>
@@ -67,7 +64,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- VALUES -->
   <section class="values-section">
     <div class="values-header">
       <div class="section-label centered">{t.about.values.label}</div>
@@ -89,7 +85,6 @@ const currentPath = Astro.url.pathname;
     </div>
   </section>
 
-  <!-- SHOP PHOTOS -->
   <section class="photos-section">
     <div class="section-label">{t.about.photos.label}</div>
     <h2 class="section-title">{t.about.photos.title}</h2>
