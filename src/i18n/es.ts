@@ -101,9 +101,9 @@ export const es: Translations = {
       label: "Quiénes Somos",
       title1: "MUCHO MÁS QUE",
       title2: "UN TALLER MECÁNICO.",
-      p1: "TrueFix Auto fue fundado con un principio simple: tratar a cada cliente como a uno le gustaría ser tratado. Como taller de veterano aquí mismo en Colorado Springs, aplicamos disciplina y precisión de nivel militar en cada reparación, ya sea un simple cambio de aceite o un reemplazo de motor completo.",
-      p2: "Nunca hacemos ventas adicionales. Nunca le hablamos en jerga técnica. Le decimos exactamente qué necesita su vehículo, qué no necesita y cuánto costará antes de tocar nada. Ese es el estándar TrueFix.",
-      p3: "Colorado Springs es nuestra comunidad. Sea usted un cliente habitual, nuevo o de paso — recibirá el mismo servicio honesto y de calidad en cada visita.",
+      p1: "TrueFix Auto se rige por un estándar claro: hacer el trabajo correctamente, comunicarse con claridad y respetar el tiempo y el dinero del cliente. Como empresa familiar al servicio de Colorado Springs, cuidamos de nuestra comunidad ofreciendo un servicio constante, recomendaciones honestas y un trabajo bien hecho a la primera. Dondequiera que vea el nombre de TrueFix, puede esperar precisión, transparencia y confiabilidad.",
+      p2: "",
+      p3: "",
       cta: "Obtener Presupuesto",
     },
     stats: {
