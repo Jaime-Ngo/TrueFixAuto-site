@@ -47,7 +47,7 @@ export const es: Translations = {
       tagline: "Donde la Integridad Maneja — Colorado Springs",
       desc: "Diagnósticos honestos, sin ventas adicionales y comunicación clara en todo momento. Tratamos su vehículo como si fuera el nuestro.",
       cta: "Solicitar Presupuesto",
-      phone: "Llamar 720-812-6036 →",
+      phone: "Llamar 719-877-3191 →",
       imgAlt: "Exterior del taller o equipo",
     },
     trust: [
@@ -197,7 +197,7 @@ export const es: Translations = {
       title: "¿NO SABE QUÉ NECESITA SU AUTO?",
       desc: "Llámenos o tráigalo a nuestro taller en Colorado Springs. Lo diagnosticamos honestamente y le decimos exactamente qué pasa.",
       book: "Agendar una Cita",
-      phone: "720-812-6036",
+      phone: "719-877-3191",
     },
     quoteLink: "Solicitar Presupuesto →",
     notifyLink: "Notifíqueme →",
@@ -248,7 +248,7 @@ export const es: Translations = {
   contact: {
     meta: {
       title: "Contacto y Citas",
-      description: "Reserve una cita o comuníquese con TrueFix Auto en Colorado Springs. Llame al 720-812-6036 o complete nuestro formulario.",
+      description: "Reserve una cita o comuníquese con TrueFix Auto en Colorado Springs. Llame al 719-877-3191 o complete nuestro formulario.",
     },
     header: {
       label: "Contáctenos",
@@ -257,7 +257,7 @@ export const es: Translations = {
       sub: "Llámenos, visítenos o llene el formulario. Lo atenderemos rápido y le mantendremos informado en cada paso.",
     },
     details: {
-      phone: { label: "Teléfono", value: "720-812-6036" },
+      phone: { label: "Teléfono", value: "719-877-3191" },
       email: { label: "Correo Electrónico", value: "info@truefixauto.com" },
       address: { label: "Dirección — Colorado Springs", value: "3826 E Pikes Peak Ave\nColorado Springs, CO 80909" },
       hours: { label: "Horario", value: "Lunes – Sábado\n9:00 AM – 6:00 PM" },

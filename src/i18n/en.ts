@@ -45,7 +45,7 @@ export const en = {
         tagline: "Where Integrity Drives — Colorado Springs",
         desc: "Honest diagnostics, no upsells, and clear communication every time. We treat your vehicle the way we'd treat our own.",
         cta: "Request Quote",
-        phone: "Call 720-812-6036 →",
+        phone: "Call 719-877-3191 →",
         imgAlt: "Shop exterior or team",
       },
       trust: [
@@ -195,7 +195,7 @@ export const en = {
         title: "NOT SURE WHAT YOUR CAR NEEDS?",
         desc: "Call us, text, or bring it in to our Colorado Springs shop. We'll diagnose it honestly and tell you exactly what's going on.",
         book: "Book an Appointment",
-        phone: "720-812-6036",
+        phone: "719-877-3191",
       },
       quoteLink: "Request Quote →",
       notifyLink: "Get Notified →",
@@ -246,7 +246,7 @@ export const en = {
     contact: {
       meta: {
         title: "Contact & Appointments",
-        description: "Book an appointment or get in touch with TrueFix Auto in Colorado Springs. Call 720-812-6036 or fill out our form.",
+        description: "Book an appointment or get in touch with TrueFix Auto in Colorado Springs. Call 719-877-3191 or fill out our form.",
       },
       header: {
         label: "Get In Touch",
@@ -255,7 +255,7 @@ export const en = {
         sub: "Call us, text, stop by, or fill out the form. We'll get you in fast and keep you updated every step of the way.",
       },
       details: {
-        phone: { label: "Phone", value: "720-812-6036" },
+        phone: { label: "Phone", value: "719-877-3191" },
         email: { label: "Email", value: "info@truefixauto.com" },
         address: { label: "Address — Colorado Springs", value: "3826 E Pikes Peak Ave\nColorado Springs, CO 80909" },
         hours: { label: "Hours", value: "Monday – Saturday\n9:00 AM – 6:00 PM" },
