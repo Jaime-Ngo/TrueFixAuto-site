@@ -95,8 +95,8 @@ const currentPath = Astro.url.pathname;
 
     <div class="booking-panel">
       <div class="booking-heading">
-        <h2>{t.contact.form.heading}</h2>
-        <p>{t.contact.form.sub}</p>
+        <h2>{t.contact.booking.heading}</h2>
+        <p>{t.contact.booking.sub}</p>
       </div>
 
       <div class="booking-cards">
@@ -107,10 +107,10 @@ const currentPath = Astro.url.pathname;
               <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </div>
-          <div class="booking-card-label">Book at the Shop</div>
-          <div class="booking-card-desc">Bring your vehicle to our shop at 3826 E Pikes Peak Ave for full-service repairs and diagnostics.</div>
+          <div class="booking-card-label">{t.contact.booking.shop.title}</div>
+          <div class="booking-card-desc">{t.contact.booking.shop.desc}</div>
           <div class="booking-card-action">
-            <span>Schedule Appointment</span>
+            <span>{t.contact.booking.shop.cta}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </div>
         </a>
@@ -125,10 +125,10 @@ const currentPath = Astro.url.pathname;
               <line x1="9" y1="18" x2="11" y2="18"/>
             </svg>
           </div>
-          <div class="booking-card-label">Book TrueFix Mobile</div>
-          <div class="booking-card-desc">We come to you! Get professional repairs and maintenance at your home, office, or roadside.</div>
+          <div class="booking-card-label">{t.contact.booking.mobile.title}</div>
+          <div class="booking-card-desc">{t.contact.booking.mobile.desc}</div>
           <div class="booking-card-action">
-            <span>Schedule Mobile Visit</span>
+            <span>{t.contact.booking.mobile.cta}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </div>
         </a>
@@ -177,7 +177,6 @@ const currentPath = Astro.url.pathname;
   .social-btn { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(245,242,236,0.6); padding: 9px 16px; border-radius: 3px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background 0.2s, color 0.2s; }
   .social-btn:hover { background: var(--green); color: white; border-color: var(--green); }
 
-  /* Booking panel — replaces the old form */
   .booking-panel { padding: 60px 56px; display: flex; flex-direction: column; justify-content: center; }
   .booking-heading { margin-bottom: 40px; }
   .booking-heading h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; color: var(--white); margin-bottom: 8px; }

@@ -254,7 +254,7 @@ export const es: Translations = {
       label: "Contáctenos",
       title1: "¿LISTO PARA",
       title2: "ARREGLAR SU AUTO?",
-      sub: "Llámenos, visítenos o llene el formulario. Lo atenderemos rápido y le mantendremos informado en cada paso.",
+      sub: "Llámenos, visítenos o reserve en línea. Lo atenderemos rápido y le mantendremos informado en cada paso.",
     },
     details: {
       phone: { label: "Teléfono", value: "719-877-3191" },
@@ -272,6 +272,20 @@ export const es: Translations = {
     },
     social: {
       label: "Encuéntrenos en Línea",
+    },
+    booking: {
+      heading: "RESERVE SU CITA",
+      sub: "Elija la opción que mejor le convenga y seleccione un horario disponible.",
+      shop: {
+        title: "Reservar en el Taller",
+        desc: "Traiga su vehículo a nuestro taller en 3826 E Pikes Peak Ave para reparaciones y diagnósticos completos.",
+        cta: "Agendar Cita",
+      },
+      mobile: {
+        title: "Reservar TrueFix Móvil",
+        desc: "Nosotros vamos a usted! Reparaciones y mantenimiento profesional en su casa, oficina o donde lo necesite.",
+        cta: "Agendar Visita Móvil",
+      },
     },
     form: {
       heading: "AGENDE SU CITA",
