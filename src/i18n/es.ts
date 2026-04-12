@@ -258,7 +258,7 @@ export const es: Translations = {
     },
     details: {
       phone: { label: "Teléfono", value: "719-877-3191" },
-      email: { label: "Correo Electrónico", value: "info@truefixauto.com" },
+      email: { label: "Correo Electrónico", value: "Cowboy@truefixauto.co" },
       address: { label: "Dirección — Colorado Springs", value: "3826 E Pikes Peak Ave\nColorado Springs, CO 80909" },
       hours: { label: "Horario", value: "Lunes – Sábado\n9:00 AM – 6:00 PM" },
     },
