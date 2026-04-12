@@ -18,11 +18,6 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <section class="about-main">
-    <div class="about-img-col">
-      <img src="/images/team.webp" alt="Our team" class="about-img" />
-      <div class="img-accent"></div>
-    </div>
-
     <div class="about-content">
       <div class="section-label">{t.about.main.label}</div>
       <h2 class="section-title">{t.about.main.title1}<br>{t.about.main.title2}</h2>
@@ -95,10 +90,7 @@ const currentPath = Astro.url.pathname;
 
 <style>
   .page-header { background: var(--black); padding: 72px 80px 60px; border-bottom: 2px solid var(--green); }
-  .about-main { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; padding: 80px; background: var(--white); }
-  .about-img-col { position: relative; padding-bottom: 20px; padding-right: 20px; }
-  .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; position: relative; z-index: 1; border-radius: 3px; }
-  .img-accent { position: absolute; bottom: 0; right: 0; width: 100px; height: 100px; background: var(--green); border-radius: 3px; z-index: 0; }
+  .about-main { padding: 80px; background: var(--white); }
   .about-content p { font-size: 15.5px; color: var(--gray); line-height: 1.8; margin-bottom: 20px; }
   .about-content p:last-of-type { margin-bottom: 36px; }
 
@@ -123,10 +115,7 @@ const currentPath = Astro.url.pathname;
 
   @media (max-width: 768px) {
     .page-header { padding: 48px 24px 40px; }
-    .about-main { grid-template-columns: 1fr; padding: 32px 24px 48px; gap: 32px; }
-    .about-img-col { padding-bottom: 10px; padding-right: 10px; }
-    .about-img { aspect-ratio: 3/2; height: 220px; width: 100%; object-position: top; }
-    .img-accent { width: 48px; height: 48px; }
+    .about-main { padding: 32px 24px 48px; }
     .stats-row { flex-direction: column; padding: 48px 24px; gap: 32px; }
     .stat-divider { width: 60px; height: 1px; }
     .values-section { padding: 48px 24px; }
