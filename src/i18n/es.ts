@@ -54,7 +54,7 @@ export const es: Translations = {
       "✓ Sin Ventas Adicionales — Jamás",
       "✓ Garantía 12 Meses / 12,000 Millas",
       "✓ Citas Disponibles el Mismo Día",
-      "✓ Se Aceptan Piezas del Cliente",
+      "✓ Descuento Militar y Primeros Respondedores",
     ],
     quick: {
       services: {
@@ -184,7 +184,6 @@ export const es: Translations = {
         { name: "Reemplazo de Correas", desc: "Correas de distribución, correas serpentinas y correas de transmisión inspeccionadas y reemplazadas antes de que lo dejen varado." },
         { name: "Relleno de Fluidos", desc: "Líquido de frenos, refrigerante, dirección asistida, transmisión. Rellenamos todos los fluidos e indicamos lo que necesita atención." },
         { name: "Revisiones de Preparación Estacional", desc: "Prepare su vehículo para el invierno o el verano con una inspección estacional completa. El clima de Colorado Springs no es broma." },
-        { name: "Piezas Suministradas por el Cliente", desc: "Instalamos las piezas que usted trae. Sin problema, sin recargo. Solo nuestra tarifa de mano de obra honesta aplicada a su trabajo." },
       ],
     },
     comingSoon: {

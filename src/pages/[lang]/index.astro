@@ -49,7 +49,7 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div class="hero-right">
-      <img src="/images/hero.webp" alt={t.home.hero.imgAlt} class="hero-img" />
+      <img src="/images/hero1.webp" alt={t.home.hero.imgAlt} class="hero-img" />
     </div>
   </section>
 
@@ -218,6 +218,31 @@ const currentPath = Astro.url.pathname;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
+
+  .hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.hero-img {
+  width: 100%;
+  height: auto;            /* let it be its natural ratio */
+  max-height: 100%;
+  border-radius: 4px;
+  /* drop object-fit and min-height entirely */
+}
+.hero {
+  min-height: clamp(560px, 78vh, 760px);   /* was calc(100vh - 68px) */
+}
+.hero-right {
+  padding: 24px 24px 24px 0;   /* was 40px all around — kill the right gap, trim the rest */
+}
+
+.hero {
+  grid-template-columns: 1fr 1.15fr;   /* was 1fr 1fr — give the image a bit more room */
+}
+
   .dot { width: 5px; height: 5px; background: rgba(255,255,255,0.35); border-radius: 50%; display: inline-block; }
 
   .quick-section { padding: 0; }

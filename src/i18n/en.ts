@@ -52,7 +52,7 @@ export const en = {
       "✓ No Upsells — Ever",
       "✓ 12-Mo / 12,000-Mi Warranty",
       "✓ Limited Same-Day Spots Available",
-      "✓ Customer-Supplied Parts OK",
+      "✓ Military & First Responder Discount",
     ],
     quick: {
       services: {
@@ -182,7 +182,6 @@ export const en = {
         { name: "Belt Replacement", desc: "Timing belts, serpentine belts, and drive belts inspected and replaced before they leave you stranded." },
         { name: "Fluid Top-Offs", desc: "Brake fluid, coolant, power steering, transmission. We top off all fluids and flag anything that needs attention." },
         { name: "Seasonal Readiness Checks", desc: "Get your vehicle ready for winter or summer with a full seasonal inspection. Colorado Springs weather is no joke." },
-        // { name: "Customer-Supplied Parts", desc: "We'll install parts you bring in. No problem, no markup. Just our honest labor rate applied to your job." },
       ],
     },
     comingSoon: {
