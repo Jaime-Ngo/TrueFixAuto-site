@@ -99,7 +99,7 @@ export const en = {
       label: "Who We Are",
       title1: "MORE THAN JUST",
       title2: "A MECHANIC SHOP.",
-      p1: "TrueFix Auto operates on a clear standard: do the work right, communicate clearly, and respect the customer's time and money. As a family owned business serving Colorado Springs, we take care of our community with consistent service, honest recommendations, and work done right the first time. Wherever you see the TrueFix name, you can expect precision, transparency, and reliability.",
+      p1: "TrueFix Auto was founded with one mission: to restore trust in the auto repair industry. As a proud Army veteran, dedicated family man, and owner of TrueFix Auto in Colorado Springs, I believe every customer deserves honest recommendations, quality repairs, and clear communication. That’s why we take the time to explain every inspection, diagnosis, and repair before any work begins, so you can make informed decisions with confidence. We don’t recommend repairs your vehicle doesn’t need, and we’ll always explain the repairs your vehicle does need. We proudly service most domestic, Asian, and European vehicles, specializing in diagnostics, electrical repair, brakes, suspension, steering, wheel alignments, A/C service, engine repair, and preventive maintenance. Every qualifying repair is backed by our 12 Month / 12,000 Mile Warranty because we stand behind the quality of our work. Whether you’re visiting us for routine maintenance or a complex diagnostic concern, our goal is simple: provide dependable repairs, exceptional service, and an experience built on honesty, integrity, and transparency. At TrueFix Auto, Where Integrity Drives isn’t just our slogan, it’s the standard we hold ourselves to every single day.",
       p2: "",
       p3: "",
       cta: "Get Estimate",
@@ -112,7 +112,7 @@ export const en = {
       discount: { num: "10% Off", label: "Military & First Responders" },
     },
     values: {
-      label: "Why Choose Us",
+      label: "WE DON'T WORK ON CARS. WE FIX THEM",
       title: "THE TRUEFIX STANDARD",
       cards: [
         {

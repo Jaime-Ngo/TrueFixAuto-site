@@ -18,13 +18,18 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <section class="about-main">
-    <div class="about-content">
-      <div class="section-label">{t.about.main.label}</div>
-      <h2 class="section-title">{t.about.main.title1}<br>{t.about.main.title2}</h2>
-      <p>{t.about.main.p1}</p>
-      <p>{t.about.main.p2}</p>
-      <p>{t.about.main.p3}</p>
-      <a href={`/${lang}/contact`} class="btn-primary">{t.about.main.cta}</a>
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="section-label">{t.about.main.label}</div>
+        <h2 class="section-title">{t.about.main.title1}<br>{t.about.main.title2}</h2>
+        <p>{t.about.main.p1}</p>
+        <p>{t.about.main.p2}</p>
+        <p>{t.about.main.p3}</p>
+        <a href={`/${lang}/contact`} class="btn-primary">{t.about.main.cta}</a>
+      </div>
+      <div class="about-image">
+        <img src="/images/about.webp" alt="The TrueFix Auto team outside the shop" class="about-photo" />
+      </div>
     </div>
   </section>
 
@@ -80,9 +85,12 @@ const currentPath = Astro.url.pathname;
     <div class="section-label">{t.about.photos.label}</div>
     <h2 class="section-title">{t.about.photos.title}</h2>
     <div class="photos-grid">
-      <img src="/images/shop1.webp" alt="Shop exterior" class="shop-photo" />
-      <img src="/images/sho2.webp" alt="Team at work" class="shop-photo" />
-      <img src="/images/shop3.webp" alt="Shop interior" class="shop-photo" />
+      <img src="/images/s1.webp" alt="Shop exterior" class="shop-photo" />
+      <img src="/images/s2.webp" alt="Team at work" class="shop-photo" />
+      <img src="/images/s3.webp" alt="Shop interior" class="shop-photo" />
+      <img src="/images/sho1.webp" alt="Shop exterior" class="shop-photo" />
+      <img src="/images/sh2.webp" alt="Team at work" class="shop-photo" />
+      <img src="/images/sho3.webp" alt="Shop interior" class="shop-photo" />
     </div>
   </section>
 
@@ -91,8 +99,11 @@ const currentPath = Astro.url.pathname;
 <style>
   .page-header { background: var(--black); padding: 72px 80px 60px; border-bottom: 2px solid var(--green); }
   .about-main { padding: 80px; background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
   .about-content p { font-size: 15.5px; color: var(--gray); line-height: 1.8; margin-bottom: 20px; }
   .about-content p:last-of-type { margin-bottom: 36px; }
+  .about-image { height: 100%; }
+  .about-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 75%; border-radius: 4px; aspect-ratio: 4/3; }
 
   .stats-row { background: var(--black); display: flex; align-items: center; justify-content: space-around; padding: 56px 80px; gap: 24px; }
   .stat { text-align: center; }
@@ -116,6 +127,8 @@ const currentPath = Astro.url.pathname;
   @media (max-width: 768px) {
     .page-header { padding: 48px 24px 40px; }
     .about-main { padding: 32px 24px 48px; }
+    .about-grid { grid-template-columns: 1fr; gap: 28px; }
+    .about-photo { aspect-ratio: 3/2; }
     .stats-row { flex-direction: column; padding: 48px 24px; gap: 32px; }
     .stat-divider { width: 60px; height: 1px; }
     .values-section { padding: 48px 24px; }
