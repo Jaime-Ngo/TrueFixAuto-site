@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../i18n';
+
+const t = useTranslations('en');
+const currentPath = Astro.url.pathname;
+---
+<Layout t={t} currentPath={currentPath}>
+
+  <div class="page-header">
+    <div class="section-label light">Legal</div>
+    <h1 class="section-title light">Privacy Policy</h1>
+    <p class="updated">Last updated: July 29, 2026</p>
+  </div>
+
+  <section class="legal-section">
+    <div class="legal-content">
+
+      <p>TrueFix Auto ("we," "us," or "our") operates the website truefixauto.co. This Privacy Policy explains how we collect, use, and protect your information when you visit our website, contact us, or respond to our ads.</p>
+
+      <h2>Information We Collect</h2>
+      <p>We may collect information you provide directly, including your name, phone number, email address, vehicle information, and any details you share when you fill out a form, request a quote, book an appointment, or contact us by phone, text, or email. We may also automatically collect limited technical information such as your IP address, browser type, and how you use our site through cookies and similar technologies.</p>
+
+      <h2>Advertising and Analytics</h2>
+      <p>We use tools such as the Meta (Facebook and Instagram) Pixel and analytics services to understand how people find and use our website and to measure and improve our advertising. These tools may use cookies to help show relevant ads and understand ad performance.</p>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use your information to respond to your requests, provide quotes and estimates, schedule and perform services, communicate with you about your vehicle and appointments, improve our services and website, and send updates or offers if you've asked to receive them.</p>
+
+      <h2>Text Messages and Calls</h2>
+      <p>If you provide your phone number, you agree that we may contact you by phone call and text message about your request, appointment, and services. Message and data rates may apply, and message frequency may vary. You can reply STOP at any time to opt out of text messages. Consent is not a condition of purchase.</p>
+
+      <h2>How We Share Information</h2>
+      <p>We do not sell your personal information. We may share it with trusted service providers who help us operate our business (such as scheduling, communication, or advertising platforms), only as needed to provide our services. We may also disclose information if required by law.</p>
+
+      <h2>Data Retention</h2>
+      <p>We keep your information only as long as needed to provide our services and for legitimate business or legal purposes.</p>
+
+      <h2>Your Choices</h2>
+      <p>You may request to access, update, or delete your personal information, or opt out of marketing communications, by contacting us using the details below.</p>
+
+      <h2>Contact Us</h2>
+      <p>
+        TrueFix Auto<br>
+        3826 E Pikes Peak Ave, Colorado Springs, CO 80909<br>
+        Phone/Text: <a href="tel:7198773191">719-877-3191</a><br>
+        Email: <a href="mailto:service@truefixauto.co">service@truefixauto.co</a>
+      </p>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header { background: var(--black); padding: 72px 80px 48px; border-bottom: 2px solid var(--green); }
+  .page-header .updated { font-size: 13px; color: rgba(245,242,236,0.4); margin-top: 16px; }
+
+  .legal-section { background: var(--white); padding: 64px 80px 96px; display: flex; justify-content: center; }
+  .legal-content { max-width: 720px; width: 100%; }
+  .legal-content p { font-size: 15px; line-height: 1.75; color: rgba(15,16,16,0.75); margin-bottom: 20px; }
+  .legal-content h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-top: 40px;
+    margin-bottom: 14px;
+  }
+  .legal-content a { color: var(--green); text-decoration: none; }
+  .legal-content a:hover { color: var(--green-light); text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .page-header { padding: 48px 24px 36px; }
+    .legal-section { padding: 40px 24px 64px; }
+    .legal-content h2 { font-size: 19px; }
+  }
+</style>
