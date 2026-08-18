@@ -9,6 +9,17 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const t = useTranslations(lang as 'en' | 'es');
 const currentPath = Astro.url.pathname;
+
+// --- Tekmetric Online Booking -------------------------------------------
+// Booking ID from the shop's Tekmetric dashboard (Share > Add to your website).
+// Both booking cards (shop + mobile) currently point at this one ID.
+const TEKMETRIC_BOOKING_ID = '3cb3215a-6490-4fc7-a79a-b58e09e67d48';
+
+// Fallback destination if the modal script is blocked or fails to load.
+// Get this from the same Share menu > "Copy link to share".
+// TODO: replace with the real direct link before launch.
+const TEKMETRIC_DIRECT_LINK = 'https://booking.tekmetric.com/';
+// -------------------------------------------------------------------------
 ---
 <Layout t={t} currentPath={currentPath}>
 
@@ -46,7 +57,7 @@ const currentPath = Astro.url.pathname;
           </div>
           <div>
             <div class="detail-label">{t.contact.details.address.label}</div>
-            <a href="https://maps.google.com/?q=3826+E+Pikes+Peak+Ave+Colorado+Springs+CO" target="_blank" class="detail-value">
+            <a href="https://maps.google.com/?q=3826+E+Pikes+Peak+Ave+Colorado+Springs+CO" target="_blank" rel="noopener" class="detail-value">
               3826 E Pikes Peak Ave<br>Colorado Springs, CO 80909
             </a>
           </div>
@@ -81,11 +92,11 @@ const currentPath = Astro.url.pathname;
       <div class="social-row">
         <div class="social-label">{t.contact.social.label}</div>
         <div class="social-links">
-          <a href="https://www.instagram.com/cowboysmechanicshop/" target="_blank" class="social-btn">
+          <a href="https://www.instagram.com/cowboysmechanicshop/" target="_blank" rel="noopener" class="social-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             Instagram
           </a>
-          <a href="https://www.facebook.com/p/Cowboys-Mechanic-Shop-61580205101878/" target="_blank" class="social-btn">
+          <a href="https://www.facebook.com/p/Cowboys-Mechanic-Shop-61580205101878/" target="_blank" rel="noopener" class="social-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             Facebook
           </a>
@@ -100,7 +111,13 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <div class="booking-cards">
-        <a href="https://calendly.com/truefixautollc/60min" target="_blank" class="booking-card">
+        <a
+          href={TEKMETRIC_DIRECT_LINK}
+          target="_blank"
+          rel="noopener"
+          class="booking-card"
+          data-booking-id={TEKMETRIC_BOOKING_ID}
+        >
           <div class="booking-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
@@ -115,7 +132,13 @@ const currentPath = Astro.url.pathname;
           </div>
         </a>
 
-        <a href="https://calendly.com/truefixmobilellc/60min" target="_blank" class="booking-card mobile-card">
+        <a
+          href={TEKMETRIC_DIRECT_LINK}
+          target="_blank"
+          rel="noopener"
+          class="booking-card mobile-card"
+          data-booking-id={TEKMETRIC_BOOKING_ID}
+        >
           <div class="booking-icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="1" y="3" width="15" height="13" rx="2"/>
@@ -149,6 +172,31 @@ const currentPath = Astro.url.pathname;
       title="TrueFix Auto — 3826 E Pikes Peak Ave, Colorado Springs, CO 80909">
     </iframe>
   </div>
+
+  <!-- Tekmetric Online Booking: loader (code 1 from "Add to your website") -->
+  <script is:inline>
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.src = 'https://booking.tekmetric.com/iframe/modal.js?time=' + Date.now();
+      document.body.appendChild(s);
+
+      var l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = 'https://booking.tekmetric.com/iframe/modal.css?time=' + Date.now();
+      document.head.appendChild(l);
+    });
+  </script>
+
+  <!-- Tekmetric Online Booking: click trigger (code 2, as a delegated handler) -->
+  <script is:inline>
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('[data-booking-id]');
+      if (!el) return;
+      if (typeof window.onShowBooking !== 'function') return; // fall through to href
+      e.preventDefault();
+      window.onShowBooking(el.dataset.bookingId);
+    });
+  </script>
 
 </Layout>
 
